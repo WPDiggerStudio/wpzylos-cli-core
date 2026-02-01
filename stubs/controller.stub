@@ -1,0 +1,91 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{namespace}}\Http\Controllers;
+
+use WPZylos\Framework\Http\Request;
+use WPZylos\Framework\Http\Response;
+
+/**
+ * {{class}} controller.
+ *
+ * @package {{namespace}}\Http\Controllers
+ */
+class {{class}}Controller
+{
+    /**
+     * Display a listing.
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function index(Request $request): Response
+    {
+        return Response::html(
+            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+            view('{{view}}.index', [])
+        );
+    }
+
+    /**
+     * Display a single item.
+     *
+     * @param Request $request
+     * @param int $id
+     * @return Response
+     */
+    public function show(Request $request, int $id): Response
+    {
+        return Response::html(
+            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+            view('{{view}}.show', ['id' => $id])
+        );
+    }
+
+    /**
+     * Store a new item.
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function store(Request $request): Response
+    {
+        // TODO: Validate and sanitize input
+        // TODO: Check capabilities
+        // TODO: Verify nonce
+
+        return Response::json(['success' => true], 201);
+    }
+
+    /**
+     * Update an item.
+     *
+     * @param Request $request
+     * @param int $id
+     * @return Response
+     */
+    public function update(Request $request, int $id): Response
+    {
+        // TODO: Validate and sanitize input
+        // TODO: Check capabilities
+        // TODO: Verify nonce
+
+        return Response::json(['success' => true]);
+    }
+
+    /**
+     * Delete an item.
+     *
+     * @param Request $request
+     * @param int $id
+     * @return Response
+     */
+    public function destroy(Request $request, int $id): Response
+    {
+        // TODO: Check capabilities
+        // TODO: Verify nonce
+
+        return Response::json(['success' => true]);
+    }
+}

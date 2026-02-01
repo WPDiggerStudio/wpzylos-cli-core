@@ -1,0 +1,45 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{namespace}}\Database\Migrations;
+
+use WPZylos\Framework\Migrations\Migration;
+
+/**
+ * {{class}} migration.
+ *
+ * @package {{namespace}}\Database\Migrations
+ */
+class {{class}} extends Migration
+{
+    /**
+     * Run the migration.
+     *
+     * @return void
+     */
+    public function up(): void
+    {
+        $tableName = $this->db->wpdb()->prefix . '{{prefix}}{{table}}';
+        $charset = $this->charsetCollate();
+
+        $sql = "CREATE TABLE {$tableName} (
+            id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+            created_at datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+            PRIMARY KEY  (id)
+        ) {$charset};";
+
+        $this->runDbDelta($sql);
+    }
+
+    /**
+     * Reverse the migration.
+     *
+     * @return void
+     */
+    public function down(): void
+    {
+        $this->dropTable('{{prefix}}{{table}}');
+    }
+}

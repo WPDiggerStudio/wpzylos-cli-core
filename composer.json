@@ -1,0 +1,71 @@
+{
+  "name": "wpdiggerstudio/wpzylos-cli-core",
+  "description": "Stub compiler and file generation utilities for building CLI tools, code generators, and scaffolding systems in the WPZylos ecosystem",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "wordpress",
+    "wpzylos",
+    "cli",
+    "stub",
+    "generator",
+    "scaffolding",
+    "code-generation",
+    "template",
+    "file-writer",
+    "php"
+  ],
+  "homepage": "https://github.com/WPDiggerStudio/wpzylos-cli-core",
+  "authors": [
+    {
+      "name": "WPDiggerStudio",
+      "email": "diggerwp@gmail.com",
+      "homepage": "https://github.com/WPDiggerStudio",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/WPDiggerStudio/wpzylos-cli-core/issues",
+    "source": "https://github.com/WPDiggerStudio/wpzylos-cli-core",
+    "docs": "https://wpzylos.com/docs/latest/packages/wpzylos-cli-core"
+  },
+  "require": {
+    "php": "^8.0"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^1.10",
+    "phpunit/phpunit": "^9.6 || ^10.0",
+    "squizlabs/php_codesniffer": "^3.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "WPZylos\\Framework\\Cli\\Core\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "WPZylos\\Framework\\Cli\\Core\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "phpunit",
+    "analyze": "phpstan analyze",
+    "cs": "phpcs --standard=PSR12 src",
+    "cs-fix": "phpcbf --standard=PSR12 src",
+    "qa": ["@cs", "@analyze", "@test"]
+  },
+  "config": {
+    "sort-packages": true,
+    "platform": {
+      "php": "8.0.2"
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "funding": [
+    {
+      "type": "paypal",
+      "url": "https://www.paypal.com/donate/?hosted_button_id=66U4L3HG4TLCC"
+    }
+  ]
+}
